@@ -217,6 +217,7 @@
         <name>codeartifact</name>
     <url>https://tea2-264663712826.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/</url>
     </repository>
+    
     </repositories>
     
 </project>
