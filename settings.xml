@@ -6,7 +6,7 @@
         <server>
             <id>codeartifact</id>
             <username>aws</username>
-            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>\
+            <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
         </server>
     </servers>
 <profiles>
@@ -16,7 +16,6 @@
       <repository>
         <id>codeartifact</id>
     <url>https://tea2-264663712826.d.codeartifact.us-east-1.amazonaws.com/maven/maven-central-store/</url>
-
       </repository>
     </repositories>
   </profile>
@@ -32,6 +31,4 @@
     <mirrorOf>*</mirrorOf>
   </mirror>
 </mirrors>
-
 </settings>
-
