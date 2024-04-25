@@ -19,7 +19,6 @@ pipeline {
         SONARSERVER = 'sonarserver'
         SONARSCANNER ='sonarscanner'
     }
-    
 
     stages {
         stage('Build') {
@@ -34,14 +33,14 @@ pipeline {
             }
         }
         
-        stage('Test'){
-            steps{
+        stage('Test') {
+            steps {
                 sh 'mvn -s settings.xml test'
             }
         }
         
-        stage('Checkstyle Analysis'){
-            steps{
+        stage('Checkstyle Analysis') {
+            steps {
                 sh 'mvn -s settings.xml checkstyle:checkstyle'
             }
         }
@@ -67,17 +66,16 @@ pipeline {
             }
         }
         
-        stage("Quality Gate"){
-            steps{
+        stage("Quality Gate") {
+            steps {
                 script {
                     timeout(time: 1, unit: 'HOURS') {
-                        //Parameter indicates whether to set pipeline to UNSTABLE
-                        //true= set pipeline to UNSTABLE, false = don't
+                        // Parameter indicates whether to set pipeline to UNSTABLE
+                        // true = set pipeline to UNSTABLE, false = don't
                         waitForQualityGate abortPipeline: true
                     }
                 }
             }
         }
-
     }
 }
